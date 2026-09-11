@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">FRayAndroid</string>
     <string name="version_format">Version %1$s (%2$d)</string>
+    <string name="enter_uuid">Enter UUID</string>
+    <string name="built_in_UUID">42c8f2ff-7c4f-4d2c-9e82-ecf59c6c0216</string>
+    <string name="vmess">vMess</string>
+    <string name="vless">vLess</string>
+    <string name="de01">DE01</string>
+    <string name="nl01">NL01</string>
+    <string name="connect_vpn">Connect VPN</string>
+    <string name="disconnect_vpn">Disconnect VPN</string>
 </resources>
