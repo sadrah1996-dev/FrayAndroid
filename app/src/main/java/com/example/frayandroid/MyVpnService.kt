@@ -82,22 +82,6 @@ class MyVpnService : VpnService() {
                     xProtocol,
                 )
                 isRunning.value = true
-                serviceScope.launch {
-                    kotlinx.coroutines.delay(1500.milliseconds)
-                    val result = checkRealInternetViaProxy(localProxyPort = 30808)
-
-                    if (result.isConnected) {
-                        updateNotification(
-                            "Connected: ${result.publicIp}",
-                            drawable.presence_online
-                        )
-                    } else {
-                        updateNotification(
-                            "⚠️ No Internet Access",
-                            drawable.presence_busy
-                        )
-                    }
-                }
             } catch (e: Exception) {
                 e.printStackTrace()
                 isRunning.value = false
@@ -107,6 +91,22 @@ class MyVpnService : VpnService() {
             isRunning.value = false
             e.printStackTrace()
             stopVpn()
+        }
+        serviceScope.launch {
+            kotlinx.coroutines.delay(500.milliseconds)
+            val result = checkRealInternetViaProxy(localProxyPort = 30808)
+
+            if (result.isConnected) {
+                updateNotification(
+                    "Connected: ${result.publicIp}",
+                    drawable.presence_online
+                )
+            } else {
+                updateNotification(
+                    "⚠️ No Internet Access",
+                    drawable.presence_busy
+                )
+            }
         }
     }
 
@@ -130,8 +130,8 @@ class MyVpnService : VpnService() {
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(drawable.presence_away)
-            .setContentTitle("VPN Connected")
-            .setContentText("Your connection is secured.")
+            .setContentTitle("Fray Connecting ...")
+            .setContentText("Checking connection")
             .setContentIntent(contentIntent)
             .setOngoing(true)
             .addAction(
