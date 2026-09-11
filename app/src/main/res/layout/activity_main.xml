@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/inputUuid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:enabled="false"
+        android:hint="Enter UUID"
+        android:inputType="text|textNoSuggestions"
+        android:minHeight="48dp"
+        android:selectAllOnFocus="true"
+        android:text="42c8f2ff-7c4f-4d2c-9e82-ecf59c6c0216" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupProtocol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioVmess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="vMess" />
+
+        <RadioButton
+            android:id="@+id/radioVless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:checked="false"
+            android:text="vLess" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroupServer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioDE01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="DE01" />
+
+        <RadioButton
+            android:id="@+id/radioNL01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:checked="false"
+            android:text="NL01" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConnect"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Connect VPN" />
+
+    <Button
+        android:id="@+id/btnDisconnect"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Disconnect VPN" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="245dp" />
+
+
+    <TextView
+        android:id="@+id/textVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:alpha="0.6" />
+
+</LinearLayout>
