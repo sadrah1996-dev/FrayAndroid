@@ -93,7 +93,7 @@ class MyVpnService : VpnService() {
             stopVpn()
         }
         serviceScope.launch {
-            kotlinx.coroutines.delay(500.milliseconds)
+            kotlinx.coroutines.delay(2000.milliseconds)
             val result = checkRealInternetViaProxy(localProxyPort = 30808)
 
             if (result.isConnected) {

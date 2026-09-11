@@ -3,13 +3,6 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
-val buildNumber = providers.gradleProperty("buildNumber")
-    .map { it.toInt() }
-    .orElse(1)
-
-val releaseVersion = providers.gradleProperty("releaseVersion")
-    .orElse("0.1.0")
-
 android {
     namespace = "com.example.frayandroid"
     compileSdk = 37
@@ -18,8 +11,8 @@ android {
         applicationId = "com.bytheds.frayandroid"
         minSdk = 24
         targetSdk = 37
-        versionCode = buildNumber.get()
-        versionName = releaseVersion.get()
+        versionCode = 5
+        versionName = "Public Beta"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
